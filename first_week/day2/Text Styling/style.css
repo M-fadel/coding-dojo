@@ -1,0 +1,15 @@
+h1{
+    text-align: left;
+    background-color: black;
+    color: aliceblue;
+}
+h2{
+    text-align: center;
+    background-color: rebeccapurple;
+    color: aliceblue;
+}
+h3{
+    text-align: right;background-color: aqua;
+    text-decoration: underline;
+
+}
