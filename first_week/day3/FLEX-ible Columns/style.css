@@ -1,26 +1,29 @@
 .row {
-
+    height: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     color: aliceblue;
-
+    padding: 3px;
 }
 
 .col {
     background-color: #5F9FA0;
     flex: 1;
     margin: 1%;
+    height: 30px;
 }
 
 .col-2 {
     background-color: #5F9FA0;
     margin: 1%;
     flex: 3;
+    height: 30px;
 }
 
 .col-3 {
     flex: 3;
     background-color: #5F9FA0;
     margin: 1%;
+    height: 30px;
 }
