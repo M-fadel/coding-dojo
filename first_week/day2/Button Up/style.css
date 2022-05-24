@@ -1,0 +1,30 @@
+#search {
+    background-color: transparent;
+
+
+    color: #00D1B2;
+    border-color: #00D1B2;
+    border: 2px solid;
+    margin: 5px;
+    border-radius: 20px;
+    height: 20%;
+    width: 10%;
+}
+
+#pluse {
+    background-color: #00D1B2;
+    border-radius: 50%;
+    border: 0px;
+    color: aliceblue;
+    font-size: larger;
+
+}
+
+#account {
+    box-shadow: 2px 2px 1px 1px black;
+    background-color: blue;
+    color: aliceblue;
+    margin: 5px;
+    height: 20%;
+    width: 10%;
+}
