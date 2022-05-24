@@ -1,0 +1,26 @@
+.row {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: aliceblue;
+
+}
+
+.col {
+    background-color: #5F9FA0;
+    flex: 1;
+    margin: 1%;
+}
+
+.col-2 {
+    background-color: #5F9FA0;
+    margin: 1%;
+    flex: 3;
+}
+
+.col-3 {
+    flex: 3;
+    background-color: #5F9FA0;
+    margin: 1%;
+}
