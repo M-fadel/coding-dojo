@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+    <div class="nav">
+        <h1 class="nav-title">Profile</h1>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">My Profile</a></li>
+            <li><a href="#">Find Connections</a></li>
+            <li><button class="btn">Sign Out</button></li>
+        </ul>
+    </div>
+
+    <div id="wrapper">
+        <div class="container">
+
+            <div class="top"></div>
+
+            <div class="bot">
+
+                <img class="pfp" src=user-circle.png alt="profile picture">
+                <h1>Jhone Doe</h1>
+                <p><img src="map-marker.png" alt="living location" id="marker"> Seattle</p>
+                <p>Developer | Engineer I Problem Solver
+                    <br> Master of shadows and the Internet !
+                </p>
+                <a href="#"><img src="gear.png" alt="gear img" id="gear">edit profile </a>
+
+            </div>
+
+            <div>
+                <div id="Edu">
+                    <label for="#">Education</label>
+                </div>
+                <div class="educationbottom">
+                    <p>Coding Dojo - Full Stack Bootcamp</p>
+                    <p>Dec 2019 - Mar 2020 </p>
+                    <p>Triple black belt in Python , MERN , and C # ...</p>
+
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="connections">
+
+            <div class="educationtop">
+                <label for="#" class="notifications"> 2 </label><label for="#">Connection Requests</label>
+            </div>
+            <div class="educationbottom">
+
+                <div class="addnotice">
+                    <div>
+                        <img class="Spic" src=todd-s.jpg alt="profile picture">
+                        <label for="#">Todd E</label>
+                    </div>
+
+                    <div>
+                        <img class="Spic" src=accept-circle.png alt="accept circle">
+                        <img class="Spic" src=close-circle.png alt="close circle">
+                    </div>
+
+
+
+                </div>
+                <div class="addnotice">
+                    <div>
+
+                        <img class="Spic" src=phil-s.jpg alt="profile picture">
+                        <label for="#">Phil K </label>
+                    </div>
+
+                    <div>
+                        <img class="Spic" src=accept-circle.png alt="accept circle">
+                        <img class="Spic" src=close-circle.png alt="close circle">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="educationtop">
+                <label for="#" class="notifications"> 500+ </label> <label for="#">Your Connection</label>
+            </div>
+            <div class="educationbottom">
+                <p><img class="Spic" src=adrien-s.jpg alt="profile picture"> &nbsp;&nbsp;Adrien D</p>
+                <p><img class="Spic" src=anne-s.jpg alt="profile picture"> &nbsp;&nbsp;Anne J </p>
+                <p><img class="Spic" src=alayne-s.jpg alt="profile picture">&nbsp;&nbsp;Alayne T</p>
+                <p><img class="Spic" src=arry-s.jpg alt="profile picture">&nbsp;&nbsp;Arry Y</p>
+
+                
+            </div>
+
+            <div class="view">
+                <a href="#">View More</a>
+            </div>
+
+        </div>
+    </div>
 </body>
+
 </html>
