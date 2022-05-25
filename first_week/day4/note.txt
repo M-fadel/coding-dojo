@@ -1,0 +1,12 @@
+profile page
+functions
+
+حكمة اليوم
+start creating the html first or drow it first 
+after finshing all the html code start styling 
+
+
+make html bages tgen link them togther?
+
+
+margin 0px auto for cennter
