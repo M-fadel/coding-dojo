@@ -1,0 +1,18 @@
+.req{
+    height: 200px;
+    width: 50%;
+    background-color: antiquewhite;
+/* width: 50%; */
+/* height: ; */
+}
+.connections{
+    height: fit-content;
+    background-color: antiquewhite;
+}
+.border{
+    height: 50px;
+    background-color: black;
+}
+img{
+    height: 10%;
+}
