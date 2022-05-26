@@ -1,2 +1,4 @@
 array challenges
 hover event
+
+caan use switch for movment keys
