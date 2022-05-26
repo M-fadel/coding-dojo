@@ -2,3 +2,5 @@ array challenges
 hover event
 
 caan use switch for movment keys
+use dive'number of divs'to create multible divs 
+#profile div img{} search for imgs inside dives where id is profile -->can i use class instead?
