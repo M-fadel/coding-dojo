@@ -10,7 +10,7 @@ flex-direction: column;
 
 }
 .navbar{
-    width: 70%;
+    width:100%;
     /* height: 10%; */
 display: flex;
 justify-content: space-around;  
@@ -22,10 +22,11 @@ padding: 1%;
 }
 
 .container{
-    width: 72%;
+    width: 50%;
+    /* padding: 0px 400px; */
     /* height: 80%; */
     display: flex;
-flex-direction: row;
+flex-direction:  column;
 /* margin: 5%; */
 align-self: center;
 /* margin-top: 5%; */
@@ -45,8 +46,8 @@ justify-content: space-between;
 
 }
 .skill-card{
-    /* width:85% ; */
-    /* height: 100Px; */
+    width:100% ;
+    height: 150px;
 border: 2px solid;
 border-color: black;
 display: flex;
@@ -58,7 +59,7 @@ text-align: center;
 
 }
 .Dojonary{
-    width: 15%;
+    width: 30%;
     border: 2px black solid;
     height: fit-content;
     padding: 3%;
@@ -72,10 +73,13 @@ text-align: center;
 
 #definition{
 background-color: #93C47D;
+width: 100%;
+padding: 1%;
 
 }
 #login{
-    background-color: cadetblue;
+    background-color: #2B78E4;
+    padding: 0px 20px ;
 
 }
 .text{
@@ -90,6 +94,14 @@ font: 15px "times New Roman";
 display: flex;
 flex-direction: column;
 justify-content: space-between;     
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.like{
+    background-color:  rgb(255,217,102);
+    padding: 3%;
 }
 /* .cardHead {
     height: 50px;
