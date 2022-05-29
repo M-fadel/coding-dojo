@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojonary</title>
     <link rel="stylesheet" href="style.css">
+    <script src="function.js"></script>
 </head>
 <body>
     
@@ -13,7 +14,8 @@
         
         <h1>Dojonary</h1>
         <input type="search" value="search">
-        <input type="submit">
+        <!-- <input type="submit" value="login" onclick="logout(this)"> -->
+        <button  id="login" onclick="logout(this)" >login</button>
     
     </div>
     
@@ -25,13 +27,15 @@
             
                 <div class="skill-card">
                     
-                    <div>
+                    <div class="cardHead">
                         <h2>ninja</h2>
-                        <input type="submit">
+                        <p>noun <br>
+                        plural: ninjas</p>
+                        <input type="submit" value="13 likes" onclick="alert('ninja was liked')">
                     </div>
 
-                    <div>
-                        <p>a practitioner skilled in the <br>
+                    <div class="text">
+                        <p>a practitioner skilled in the
                         japanese are of ninjutsu </p>
                     </div>
 
@@ -39,13 +43,16 @@
                 
                 <div class="skill-card">
                     
-                    <div>
+                    <div class="cardHead">
                         <h2>ninja</h2>
-                        <input type="submit">
+                        <p>noun <br>
+                            plural: ninjas</p>
+                        <input type="submit" value="37 likes" onclick="alert('ninja was liked')">
+                        
                     </div>
-                    <div>
-                        <p>a programmer who breaks <br>
-                        down problems with zen-like <br>
+                    <div class = "text">
+                        <p>a programmer who breaks 
+                        down problems with zen-like 
                         focus </p>
                     </div>
                 </div>
@@ -57,7 +64,8 @@
 
         <div class="Dojonary">
             <p>Dojonary is defined by you</p>
-            <input type="submit" value="add Definition">
+            <!-- <input type="submit" value="add Definition" id="definition"> -->
+            <button id = definition onclick="disappear(this)">add Definition</button>
         </div>
 
 
