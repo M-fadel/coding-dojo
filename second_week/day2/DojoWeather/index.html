@@ -15,9 +15,9 @@
 
         <div class="navbar">
             <h1>dojo weather</h1>
-            <a href="#">Burbank</a>
-            <a href="#">Chicago</a>
-            <a href="#">Dallas</a>
+            <a href="#" onclick="alert('Loading weather report')">Burbank</a>
+            <a href="#" onclick="alert('Loading weather report')">Chicago</a>
+            <a href="#" onclick="alert('Loading weather report')">Dallas</a>
         </div>
         <div class="weather">
 
@@ -25,15 +25,17 @@
                 <div>
                     <h2>San Jose</h2>
                 </div>
-                <div class="">
+                <div class="Chose">
+                    
+                    <p>show temperature in </p>
 
-                    <p>show temperature in</p>
-                    <select name="temperature">
-                        <option value="C">C</option>
-                        <option value="F">F</option>
-                    </select>
-
+                        <select name="temperature" onchange="tempChange(this)">
+                            <option value="C">C°</option>
+                            <option value="F">F°</option>
+                        </select>
+                    
                 </div>
+                
 
 
 
@@ -45,7 +47,7 @@
                     <img src="some_rain.png" alt="rain" width= 100px height= 100px>
                     <p>some rain</p>
                     <div class="temperature">
-                        <p>27</p> <p>18</p>
+                        <p class="Red" id="1">24</p> <p class="Blue" id="5">18</p>
                     </div>
 
                 </dive>
@@ -54,7 +56,7 @@
                     <img src="some_sun.png" alt="" width= 100px height= 100px>
                     <p>some sun</p>
                     <div class="temperature">
-                        <p>27</p> <p>18</p>
+                        <p class="Red" id="2">27</p> <p class="Blue" id="6">19</p>
                     </div>
                 </dive>
                 <dive class="witherDay">
@@ -62,7 +64,7 @@
                     <img src="some_clouds.png" alt="" width= 100px height= 100px>
                     <p>some clouds</p>
                     <div class="temperature">
-                        <p>27</p> <p>18</p>
+                        <p class="Red" id="3">21</p> <p class="Blue"id="7">16</p>
                     </div>
                 </dive>
                 <dive class="witherDay">
@@ -70,23 +72,30 @@
                     <img src="some_rain.png" alt="" width= 100px height= 100px>
                     <p>some sun</p>
                     <div class="temperature">
-                        <p>27</p> <p>18</p>
+                        <p class="Red" id="4">26</p> <p class="Blue" id="8">21</p>
                     </div>
                 </dive>
 
             </div>
             <div class=cookie>
-                <img src="cookie.png" alt="">
-                <p>sp Stop! cookie time</p>
+                
+                <img src="cookie.png" alt="cookie img">
+                <div>
+                    
 
-                <p>we use cookies (sadly not edible ones)
-                    to personolaies content and ads, to
-                    provide social media feature and to
-                    analyse our traffic.
-                    <a href="#">read more...</a>
-                </p>
+                    <p>Stop! cookie time <br>
+                        we use cookies (sadly not edible ones)
+                        to personalize content and ads, to
+                        provide social media feature and to
+                        analyse our traffic.
+                        <a href="#">read more...</a>
+                    </p>
+                </div>
+                    <button onclick="remove(this);">Accept</button>
+    
+                
+                </div>
 
-            </div>
         </div>
 
 

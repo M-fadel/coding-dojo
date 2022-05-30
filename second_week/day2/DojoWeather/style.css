@@ -1,5 +1,9 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
 .wrapper{
-    
+    height: 100%;
     display: flex ;
     flex-direction: column;
     /* background-color: antiquewhite; */
@@ -13,7 +17,13 @@ flex-direction: column;
 }
 .city{
     display: flex;
+    /* justify-content:center;  */
+    /* align-items: center; */
+    /* text-align: center; */
     justify-content: space-between;
+    border-bottom: solid black;
+    margin-bottom: 2%;
+    
 }
 .days{
     /* width:  */
@@ -23,11 +33,19 @@ flex-direction: column;
 }
 .cookie{
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
+    flex-direction: row;
     background-color: #EEEEEE;
     align-items:  flex-end;
-    justify-self: center;
+    /* justify-self: center; */
+    border: solid black;
+    padding: 1%;
+    text-align: center;
+    /* margin-top: 10%; */
     /* position: ; */
+    align-items: center;
+    position:absolute;
+    bottom: 0px;
 }   
 .witherDay{
     width: 20%;
@@ -35,14 +53,43 @@ flex-direction: column;
     flex-direction: column;
     justify-content: center;  
     align-items: center;
-    
     background-color: #EEEEEE;
 }
 .temperature{
     width: 100%;
-    /* background-color: aqua; */
     display: flex;
     flex-direction:row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end;
+}
+.Chose{
+    /* width: 0%; */
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    /* flex-direction: c; */
+    /* text-align: center; */
+    background-color: #9FC5F8;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around
+    
+}
+.navbar a {
+    color: #EEEEEE;
+    /* border:; */
+    /* line-break:  none; */
+    text-decoration: none;
+    font-size: large;
+}
+.Red{
+    color: red;
+    font-weight: bold;
+}
+.Blue{
+    color: blue;
+    font-weight: bold;
 }
