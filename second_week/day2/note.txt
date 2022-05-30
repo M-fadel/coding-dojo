@@ -1,0 +1,3 @@
+marign 0 px auto for ciner
+classname > tag for first target
+#id tag for all the tags inside the id 
