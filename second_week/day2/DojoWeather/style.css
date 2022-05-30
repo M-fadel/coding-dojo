@@ -1,0 +1,48 @@
+.wrapper{
+    
+    display: flex ;
+    flex-direction: column;
+    /* background-color: antiquewhite; */
+}
+.weather{
+width: 960px;
+margin: 0px auto;
+display: flex;
+flex-direction: column;
+
+}
+.city{
+    display: flex;
+    justify-content: space-between;
+}
+.days{
+    /* width:  */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cookie{
+    display: flex;
+    /* justify-content: center; */
+    background-color: #EEEEEE;
+    align-items:  flex-end;
+    justify-self: center;
+    /* position: ; */
+}   
+.witherDay{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+    
+    background-color: #EEEEEE;
+}
+.temperature{
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
