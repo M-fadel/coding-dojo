@@ -20,4 +20,6 @@ pizza = pizzaOven("hand tossed", "marinara", ["mozzarella", "feta"],["mushrooms"
 console.log(pizza)
 pizza = pizzaOven("ThinCrust, marinara", ["meatballs", "sausage", "pepperoni"]);
 console.log(pizza)
-pizza = pizzaOven("Thick Crust , ranch", "mozzarella", ["onions", "olives", "mushrooms",])
+pizza = pizzaOven("Thick Crust , ranch", "mozzarella", ["onions", "olives", "mushrooms","chicken"])
+console.log(pizza)
+
