@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ninja gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">   
+</head>
+<body>
+    <div class="wrapper">
+        <div><p>your Gold</p>
+        <input type="text" value={{request.session.yourGold}}>
+    </div>
+        <div class ="questList">
+            <div class = quest>
+                <form action="/addGold" class="card" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="quest" value =farm>
+                    <p>farm</p>
+                    <p>earns 10-20 gold</p>
+                    <input type="submit" value="Find gold">
+                </form>
+            </div>
+            <div class = quest>
+                <form action="/addGold" class="card" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="quest" value="cave">
+                    <p>cave</p>
+                    <p>earns 10-20 gold</p>
+                    <input type="submit" value="Find gold">
+                    
+                </form>
+            </div>
+            <div class = quest>
+                <form action="/addGold" class="card"method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="quest"value ="house">
+                    <p>house</p>
+                    <p>earns 10-20 gold</p>
+                    <input type="submit" value="Find gold" >
+                </form>
+            </div>
+            <div class = quest class="card">
+                <form action="/gamble" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="quest" value="gamble">
+                    <p>quest</p>
+                    <p>earns 0-50 gold</p>
+                    <input type="submit" value="Find gold">
+                    
+                </form>
+            </div>
+        </div>
+            <p>Activities:</p>
+            
+            <div style="height:100px;width:960px;overflow:auto;border:1px solid;padding:2%">
+                
+                {%for i in request.session.logg %}
+                
+                    <p>
+
+                        {{i}}
+                    </p>
+                
+                    
+                {%endfor%}
+            </div>
+                
+                
+                
+        </div>
+    </body>
+    </html>
