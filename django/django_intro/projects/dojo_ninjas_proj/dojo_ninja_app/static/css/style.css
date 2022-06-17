@@ -1,0 +1,26 @@
+.wrapper{
+    width: 960px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.dojosAndNinjas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.add{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    
+}
+.dojos
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
