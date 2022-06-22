@@ -1,0 +1,20 @@
+python manage.py shell ///run shell
+from users_app.models import * //import files
+
+users.objects.create(first_name="mohammed",last_name="fadel",email_address="mohammed@gmail.com",age=25)
+
+users.objects.create(first_name="khaled",last_name="ahmad",email_address="khaled@gmail.com",age=30)
+
+users.objects.create(first_name="saad",last_name="alshreef",email_address="saad@gmail.com",age=42)
+users.objects.all()
+users.objects.last()
+	
+
+temp =users.objects.get(id=3)
+temp.las_name="ahmad"
+temp.save()
+
+delete = users.objects.get(id=2)
+delete.delete()
+
+users.objects.all()
