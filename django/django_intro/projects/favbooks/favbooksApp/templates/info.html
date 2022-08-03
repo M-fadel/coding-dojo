@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,4 +64,71 @@
     </div>
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if messages %}
+    <ul class="messages">    
+    {% for message in messages %}    
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+    </ul>
+    {% endif %}
+    <div>
+        <h2>welcome,{{user.fName}}</h2>
+        <a href="/logout">logout</a>
+    </div>
+    <div><div>
+        {%if book.users.first.id == request.session.users  %}
+            <form action="/update" method="post">
+                {% csrf_token %}
+                <div>
+                    <input type="text" name="title" value="{{book.title}}">
+                </div>
+                <p>Added by {{book.users.first.fName}}</p>
+                <p>added on{{book.created_at}} </p>
+                <p>Last updated on: {{book.updated_at}}</p>
+                <div>
+                    <textarea name="dec" id="" cols="30" rows="10">{{book.dec}}</textarea>
+                </div>
+                <input type="hidden" name="id"value="{{book.id}}">
+                <input type="submit" name ="button" value = update>
+                <input type="submit" name ="button" value = delete>
+            </form>
+
+        {% else%}
+        <h2>{{book.title}}</h2>
+        <p>Added by {{book.users.first.fName}}</p>
+        <p>added on{{book.created_at}} </p>
+        <p>Last updated on: {{book.updated_at}}</p>
+        <p>Description: {{book.dec}}</p>
+        {% endif %}
+    </div>
+    <div>
+        <h2>Users who like this book</h2>
+
+        {%for i in book.users.all %}
+            {%if i.id == request.session.users%}
+                <p>{{i.fName}} {{i.lName}} <a href="/unfavorite/{{book.id}}">unfavorite </a></p>
+            {% else %}
+                <p>{{i.fName}} {{i.lName}}</p>
+            {% endif %}
+        {% endfor %}
+<br>
+        {%for i in book.users.all %}
+        {% if user not in i%}
+        <a href={{i.id}}>add to favorite</a>
+        {% endif %}
+        {% endfor %}
+    </div>
+    </div>
+</body>
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
 </html>

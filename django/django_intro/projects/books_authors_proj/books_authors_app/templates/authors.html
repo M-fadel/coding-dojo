@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,4 +51,58 @@
     </div>
     
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books & Authors</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Add an Author</h1>
+            <form action="/addAuthor" method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="fname">First Name</label>
+                <input type="text" name="fName">
+                </div>
+                <div>
+                    <label for="lname">last Name</label>
+                    <input type="text" name="lName">
+                </div>
+                <div>
+                    <label for="note">Notes</label>
+                    <textarea name="note"cols="30" rows="10"></textarea>
+                </div>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </tr>
+            {% for i in auth %}
+            
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.fName}}{{i.lName}}</td>
+                <td><a href="/author/{{i.id}}">View</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+    
+</body>
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
 </html>

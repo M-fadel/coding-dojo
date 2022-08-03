@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from books_authors_app.models import*
 imQuery: Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby
 books.objects.create(title = "C_sharp")
@@ -44,4 +45,52 @@ auth3.book.add(c,java,Python,php)
 auth4.book.add(c,java,Python,php,ruby)
 
 uth3.book.all()
+=======
+from books_authors_app.models import*
+imQuery: Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby
+books.objects.create(title = "C_sharp")
+books.objects.create(title = "Java")
+books.objects.create(title = "Python")
+books.objects.create(title = "PHP")
+books.objects.create(title = "Ruby")
+
+Query: Create 5 different authors: 
+Jane Austen, Emily Dickinson, Fyodor Dostoevsky, William Shakespeare, Lau Tzu
+authors.objects.create(fName = "Jane",lName = "Austen")
+authors.objects.create(fName = "Jane",lName = "Austen")
+authors.objects.create(fName = "Emily",lName = "Dickinson")
+authors.objects.create(fName = "Fyodor",lName = "Dostoevsky")
+authors.objects.create(fName = "William",lName = "Shakespeare")
+authors.objects.create(fName = "Lau",lName = "Tzu")
+
+from books_authors_app.models import*
+book1 = books.objects.get(id=1)
+book1.title ='C#'
+book1.save()
+
+a= authors.objects.get(id = 5)
+a.fName = "bill"
+a.save()
+
+c= books.objects.get(id =1)
+java = books.objects.get(id =2)
+Python = books.objects.get(id =3)
+php = books.objects.get(id =4)
+ruby = books.objects.get(id =5)
+
+auth1 =authors.objects.get(id =2)
+auth2 = authors.objects.get(id= 3)
+auth3 = authors.objects.get(id =4)
+auth4 = authors.objects.get(id =5)
+auth5   = authors.objects.get(id =6)
+
+auth1.book.add(c)
+auth1.book.add(java)
+
+auth2.book.add(c,java,Python)
+auth3.book.add(c,java,Python,php)
+auth4.book.add(c,java,Python,php,ruby)
+
+uth3.book.all()
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
  books.objects.get(id = 1).author.first().fName

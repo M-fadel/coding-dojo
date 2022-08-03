@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container{
     width: 960px;
     margin: 0 auto;
@@ -5,4 +6,13 @@
     flex-direction: column;
     justify-content:center
     
+=======
+.container{
+    width: 960px;
+    margin: 0 auto;
+    display :flex;
+    flex-direction: column;
+    justify-content:center
+    
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
 }

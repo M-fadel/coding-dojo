@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,4 +42,49 @@
     </div>
     
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add a show</title>
+</head>
+<body>
+    <div>
+        {% if messages %}
+        <ul class="messages">    
+        {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+        </ul>
+        {% endif %}
+        <h1>Add a show</h1>
+        <a href="/shows">Go back</a>
+        <form action="/shows/read" method="post">
+            {% csrf_token %}
+            <div>
+                <p>Title</p>
+                <input type="text" name="title">
+            </div>
+            <div>
+                <div>
+                    <p>Network</p>
+                    <input type="text" name="network">
+                </div>
+                <div>
+                    <p>Release Date</p>
+                    <input type="date" name="date" id="">
+                </div>
+            </div>
+            <div><p>Description</p>
+                <textarea name="des"  cols="30" rows="10"></textarea>    
+            </div>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+    
+</body>
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
 </html>

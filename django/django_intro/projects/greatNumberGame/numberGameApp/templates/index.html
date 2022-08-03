@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,4 +77,84 @@
         </div>
         {%endif%}
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>great number game</title>
+    <style type="text/css">
+        .wrapper{
+            /* width :960px; */
+        margin : 0 auto}
+        .wrong{
+            display :flex;
+            justify-content : center;
+            background-color: red;
+            width:300px;
+            height: 300px;
+        }
+        .right{
+            width:300px;
+            height: 300px;
+            display : flex;
+            flex-direction: column;
+            align-items : center;
+            justify-content: center;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class = 'wrapper'>
+
+        <h3>welcome to the great number game!</h3>
+        <p>i am thinking of a number between 1 and 100</p>
+        <p>take a guess!</p>
+        {%if request.session.guess == 0 %}
+        <form action="/" method="post">
+        {% csrf_token %}
+        <p>take a guess</p>
+        <input type="number" name = guess>
+        <input type="submit">
+    </form>
+    {%endif%}
+    
+    {%if request.session.answer == 0 %}
+    <div class="worng">
+        
+        <form action="/" method="post" class="worng">
+                {% csrf_token %}
+                <h1>too small</h1>
+                <input type="number" name = guess>
+                <input type="submit">
+            </form>
+            
+        </div>
+        {%endif%}
+        {%if request.session.answer == 2 %}
+        <div class="wrong">
+            <form action="/" method="post"class="worng">
+                {% csrf_token %}
+                <h1>too large</h1>
+                <input type="number" name = guess>
+                <input type="submit">
+            </form>
+            
+        </dIV>
+        {%endif%}
+    </div>
+    {%if request.session.answer == 1 %}
+    <div class="right">
+        <form action="delete" method="post"class="right">
+            {% csrf_token %}
+            <h1>{{request.session.guess}} was the number<h1>
+                <input type="submit" value="play again">
+            </form>
+        </div>
+        {%endif%}
+</body>
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
 </html>

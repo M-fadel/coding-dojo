@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,4 +29,36 @@
     </select>
     <input type="submit" value="Add">
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books & Authors</title>
+</head>
+<body>
+    <h1>{{author.fName}} {{author.lName}}</h1>
+    <h2>ID: {{author.id}}</h2>
+    <label for="#">note</label>
+    <p>{{author.notes}}</p>
+
+    <p>books:</p>
+    {% for i in book %}
+    <p>{{i.title}}</p>
+    {% endfor %}
+
+    <form action="/authorToBooks" method="post">
+    {% csrf_token %}
+    <select name="authors">
+
+        {% for i in allBooks %}
+        
+    <option value={{author.id}},{{i.id}}>{{i.title}} 1</option>
+    {% endfor %}
+    </select>
+    <input type="submit" value="Add">
+</body>
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
 </html>

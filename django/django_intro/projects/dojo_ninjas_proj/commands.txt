@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 python manage.py shell
 from dojo_ninja_app.models import *
 
@@ -38,4 +39,46 @@ ninja.objects.last().dojo
 python manage.py shell
 from dojo_ninja_app.models import *
 
+=======
+python manage.py shell
+from dojo_ninja_app.models import *
+
+dojo.objects.create(name="johny",city="randomCity",state="ii")
+dojo.objects.create(name="nezar",city="qayra",state="ab")
+dojo.objects.create(name="moath",city="sea",state="ri")
+
+delete = dojo.objects.all()
+delete.delete()
+
+dojo.objects.create(name="johny",city="randomCity",state="ii")
+dojo.objects.create(name="nezar",city="qayra",state="ab")
+dojo.objects.create(name="moath",city="sea",state="ri")
+
+dojo1 = dojo.objects.get(id=4)//or we can use.first
+
+ninja.objects.create(dojo=dojo1,fName="khaled",lName="salama")
+ninja.objects.create(dojo=dojo1,fName="aziz",lName="redwan")
+ninja.objects.create(dojo=dojo1,fName="zahra",lName="khaled")
+
+dojo2 = dojo.objects.get(id=5)
+
+ninja.objects.create(dojo=dojo2,fName="somia",lName="barakat")
+ninja.objects.create(dojo=dojo2,fName="kfc",lName="salamat")
+ninja.objects.create(dojo=dojo2,fName="steak",lName="bee")
+
+dojo3 = dojo.objects.get(id=6)
+
+ninja.objects.create(dojo=dojo3,fName="sabri",lName="ashraf")
+ninja.objects.create(dojo=dojo3,fName="black",lName="coffe")
+ninja.objects.create(dojo=dojo3,fName="sda",lName="cheez")
+
+ninja.objects.filter(dojo=dojo.objects.first()) 
+ninja.objects.filter(dojo=dojo.objects.last()) 
+
+ninja.objects.last().dojo
+
+python manage.py shell
+from dojo_ninja_app.models import *
+
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
 dojo.objects.create(name="ree",city="movie",state="la")

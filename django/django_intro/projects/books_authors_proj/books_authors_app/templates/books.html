@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,4 +47,54 @@
     </div>
     
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books & Authors</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <div class = "container">
+        <div>
+            <h1>Add a Book</h1>
+            <form action="/addBook" method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="title">Title:</label>
+                <input type="text" name="title">
+                </div>
+                <label for="des">Description</label>
+                <div>
+
+                    <textarea name="des"cols="30" rows="10"></textarea>
+                </div>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Action</th>
+                </tr>
+                {% for i in book %}
+                
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.title}}</td>
+                    <td><a href="/book/{{i.id}}">View</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    
+</body>
+>>>>>>> e952974c77d98ff495761fdcef6ddcc990316774
 </html>
