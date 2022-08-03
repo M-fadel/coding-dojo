@@ -1,0 +1,31 @@
+*{background-color:  aqua;}
+.wrapper{
+    width: 960px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.questList{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.quest{
+    display: flex;
+    border: 1px solid ;
+    flex-direction: column;
+    text-align: center;
+    width: 20%;
+    height: 150px;
+}
+.card
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}

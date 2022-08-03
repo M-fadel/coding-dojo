@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>success</title>
+</head>
+
+<body>
+    <div class="container">
+    {% if messages %}
+    <ul class="messages">    
+    {% for message in messages %}    
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+    </ul>
+    {% endif %}
+    <div>
+
+        <h2>Hello {{user.fName}}! lets edit your wish!</h2>
+        <a href="/logout">logout</a>
+
+    </div>
+
+        <div>
+            <form action="/update/{{wish.id}}" method="post">
+                {% csrf_token %}
+
+                <div>
+                    <label for="title">title</label>
+                    <input type="text" name="title" value ={{wish.Title}}>
+                </div>
+
+                <div>
+                    <label for="dec">Description</label>
+                    <input type="text" name="des" value = "{{wish.des}}">
+                </div>
+                <input type="submit" value="Edit">
+                <a href="/wishes"><input type="button" value="Cancel"></a>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
