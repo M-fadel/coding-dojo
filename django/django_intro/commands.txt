@@ -1,0 +1,8 @@
+ python manage.py runserver
+source djangopy3Env/Scripts/activate
+django-admin startproject your_project_name_here
+python manage.py startapp your_app_name_her
+
+  > python manage.py makemigrations
+  > python manage.py migrate
+

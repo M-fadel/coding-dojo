@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wishing App</title>
+</head>
+
+<body>
+    {% if messages %}
+    <ul class="messages">    
+    {% for message in messages %}    
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+    </ul>
+    {% endif %}
+    <div>
+
+        <h2>welcome,{{user.fName}}</h2>
+        <a href="/logout">logout</a>
+
+    </div>
+
+    <div>
+        <div>
+
+            <h2>add a favorite book</h2>
+            <form action="/addBook" method="post">
+                {% csrf_token %}
+
+                <div>
+                    <label for="title">title</label>
+                    <input type="text" name="title">
+                </div>
+
+                <div>
+                    <label for="dec">Description</label>
+                    <textarea name="dec" id="" cols="30" rows="10"></textarea>
+                </div>
+                <input type="submit" value="Add">
+            </form>
+
+            <div>
+                <h2>all Books</h2>
+
+                {% for i in book %}
+
+                <a href="/info/{{i.id}}">{{i.title}}</a>
+                <p>Added by {{i.users.first.fName}}</p>
+                {% if user in i.users.all %}
+
+                <p>this is one of your favorites</p>
+
+
+                {%else%}
+                <a href={{i.id}}>add to favorite</a>
+                {%endif%}
+            
+                <br>
+                {%endfor%}
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

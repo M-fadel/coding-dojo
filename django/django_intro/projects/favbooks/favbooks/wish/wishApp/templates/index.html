@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The wishing App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container" >
+    {% if messages %}
+    <ul class="messages">    
+    {% for message in messages %}    
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+    </ul>
+    {% endif %}
+    <h1>Welcome! sing in to make a wish</h1>
+<div class=" wrapper">
+
+    <div class =reg>
+        <h1>registration</h1>
+        <form action="/register" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="fname">First name</label>
+                <input type="text" name="fName">
+            </div>
+            <div>
+                <label for="lName">last name</label>
+                <input type="text" name="lName">
+            </div>
+            <div>
+                <label for="Email">Email</label>
+                <input type="email" name="Email">
+            </div>
+            <div>
+                <label for="password">password</label>
+                <input type="password" name="password" id="">
+            </div>
+            <div>
+            <label for="confirm">confirm</label>
+            <input type="password" name="confirm">
+            </div>
+                
+            <input type="submit">
+        </form>
+    </div>
+    <div class = login>
+        <h1>login</h1>
+        <form action="/login" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="Email">Email</label>
+                <input type="email" name="Email">
+            </div>
+            <div>
+                <label for="Password">password</label>
+                <input type="password" name="Password">
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+    
+</div>
+</div>
+</body>
+</html>

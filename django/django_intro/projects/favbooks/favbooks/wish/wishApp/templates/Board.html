@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wishing App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+    <div class = "container">
+
+        <div class = "navbar">
+            <h2>hello,{{user.fName}}!</h2>
+            <div class = "ss">
+                <a href="/logout">logout</a>
+                <a href="/info"><input type="submit" value="View states"></a> 
+                </form>
+                <a href="/wish"><input type="submit" value="Make a wish!"></a>  
+            </div>
+        </div>
+        <div>
+            <p>your wish list:</p>
+            <table class = "table">
+                <tr>
+                    <th>Item</th>
+                    <th>Date Added</th>
+                    <th>Action</th>
+                </tr>
+                {% for item in wishes %}
+                {%if item not in user.wishes.all%}
+                <tr>
+                    <td>{{item.Title}}</td>
+                    <td>{{item.created}}</td>
+                    <td>
+                        <a href="/remove/{{item.id}}">remove</a>
+                        <a href="/edit/{{item.id}}">Edit</a> 
+                        <a href="/granted/{{item.id}}">Granted!</a>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+        
+        <div>
+            <table class = "table">
+                <tr>
+                    <th>Item</th>
+                    <th>Wisher</th>
+                    <th>Date Added</th>
+                    <th>Likes</th>
+                    <th>Action</th>
+                </tr>
+                {% for i in users.all%}
+                {%for x in i.wishes.all%}
+                <tr>
+                    <td>{{x.Title}}</td>
+                    <td>{{i.fName}}</td>
+                    <td>{{x.created}}</td>
+                    <td>{{x.Like}}</td>
+                    <td><a href="like/{{x.id}}">Like</a></td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+            </table>
+        </div>
+
+
+    </div>
+    </body>
+</html>
