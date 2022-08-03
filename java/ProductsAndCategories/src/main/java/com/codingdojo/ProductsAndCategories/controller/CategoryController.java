@@ -54,5 +54,6 @@ public String join(@PathVariable("id")Long id,@RequestParam(value ="pID")Long pI
 	
 	CS.join(PS.findById(pID), id);
 	return"redirect:/cs/"+id;
+	
 }
 }

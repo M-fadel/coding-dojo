@@ -19,7 +19,7 @@
     	</ul>
     </div>
     <div>
-     <form action="/catejoin/${p.id}" method="post">
+     <form action="/catejoin/${c.id}" method="post">
     <select name ="pID">
     <c:forEach var="i" items="${without}">
     <option value="${i.id}">${i.name}</option>

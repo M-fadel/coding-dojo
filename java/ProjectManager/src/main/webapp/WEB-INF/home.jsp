@@ -9,8 +9,46 @@
         <title>Demo JSP</title>
     </head>
 <body>
+    <div class="navbar">
+<div>
+    
     <h1>Welcome,${s.userName}</h1>
-    <p>this is your dashboard. nothing to see here yet.</p>
     <a href="/logout">logout</a>
+</div>
+<div>
+    <form action="/new/project">
+    <button >+new project</button>
+</form>
+</div>
+    </div>
+<div>
+<div>
+    
+    <p>all projects</p>
+    <table>
+        <tr>
+            <th>project</th>
+            <th>Team Lead</th>
+            <th>Due Date</th>
+            <th>Action</th>
+        </tr>
+            <tr>
+                
+                <p>loop here</p>
+            </tr>
+            
+    </table>
+</div>
+<div>
+
+    <p>Your projects</p>
+    <table>
+        <th>project</th>
+        <th>Team Lead</th>
+        <th>Due Date</th>
+        <th>Action</th>
+    </table>
+</div>
+</div>
 </body>
 </html>
