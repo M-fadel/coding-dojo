@@ -34,6 +34,6 @@ class Sensei extends Ninja {
         console.log("What one programmer can do in one month, two programmers can do in two months.")
     }
 }
-const s = new Sensei("Hyabusa");
+const s = new Sensei("Hyabusa",500,100,100);
 s.showStats()
 s.speakWisdom()
