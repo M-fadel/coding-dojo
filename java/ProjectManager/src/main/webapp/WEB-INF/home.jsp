@@ -32,22 +32,50 @@
             <th>Due Date</th>
             <th>Action</th>
         </tr>
+        <c:forEach var="p" items="${without}">
+            
+                <c:if test="${p.user.userName!= s.userName}">
             <tr>
+                <td>${p.title}</td>
+                <td>${p.user.userName }</td>
+                <td>${p.dueDate}</td>
+                <td><a href="/join/${p.id}">join</a></td>
                 
-                <p>loop here</p>
             </tr>
+	                </c:if>
+        </c:forEach>
             
     </table>
 </div>
 <div>
 
     <p>Your projects</p>
+    
     <table>
+    <tr>
         <th>project</th>
         <th>Team Lead</th>
         <th>Due Date</th>
         <th>Action</th>
+    </tr>
+       <c:forEach var="p" items="${with}">
+            
+            <tr>
+            
+                <td><a href ="/Project/${p.id}">${p.title}</a></td>
+                <td>${p.user.userName }</td>
+                <td>${p.dueDate}</td>
+                <c:if test="${p.user.userName == s.userName}">
+                <td><a href="/edit/${p.id}">Edit</a></td>
+                </c:if>
+                <c:if test="${p.user.userName != s.userName}">
+                <td><a href="/leave/${p.id}">leave</a></td>
+                </c:if>
+                
+            </tr>
+        </c:forEach>
     </table>
+    
 </div>
 </div>
 </body>

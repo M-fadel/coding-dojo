@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.codingdojo.ProjectManager.models.LoginUser;
 import com.codingdojo.ProjectManager.models.User;
+import com.codingdojo.ProjectManager.service.ProjectService;
 import com.codingdojo.ProjectManager.service.UserService;
     
 @Controller
@@ -22,6 +23,8 @@ public class HomeController {
     
     @Autowired
     private UserService userServ;
+    @Autowired 
+    ProjectService pService;
     
     @GetMapping("/")
     public String index(Model model) {
@@ -59,6 +62,9 @@ public class HomeController {
     	if(session.getAttribute("user_id")!=null){
     		User user= userServ.findById((Long)session.getAttribute("user_id"));
     		model.addAttribute("s",user);
+//    		model.addAttribute("p", pService.findProjects());
+    		model.addAttribute("with",pService.findWith(user));
+    		model.addAttribute("without",pService.findWithout(user));
     		return "home.jsp";
     	}else {
     		return "Redirect:/";

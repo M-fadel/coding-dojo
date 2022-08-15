@@ -1,6 +1,7 @@
 package com.codingdojo.ProjectManager.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -75,16 +80,69 @@ public class Project {
 	public Project() {
 	}
 
-	public Project(@NotEmpty String title, @NotNull @Size(min = 3) String des, @NotEmpty Date dueDate) {
+
+	 
+    public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+
+
+	@Column(updatable=false)
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private Date createdAt;
+    public Project(@NotEmpty(message = "please provide a title") String title,
+			@NotNull @Size(min = 3, message = " Description must be more than 3 charecters") String des,
+			@NotNull(message = "please provide a date") Date dueDate, Date createdAt) {
 		this.title = title;
 		this.des = des;
 		this.dueDate = dueDate;
 	}
-	 
-    @Column(updatable=false)
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private Date createdAt;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+
+
+
+	@DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
-	 
+	
+	  @PrePersist
+	    protected void onCreate() {
+	        this.createdAt = new Date();
+	    }
+
+	    @PreUpdate
+	    protected void onUpdate() {
+	        this.updatedAt = new Date();
+	    }
+	    @ManyToMany(fetch = FetchType.LAZY)
+	    @JoinTable(
+	     name = "Project_managers", 
+	     joinColumns = @JoinColumn(name = "projects"), 
+	     inverseJoinColumns = @JoinColumn(name = "team"))
+	     private List<User> team;
+
+
+
+		public List<User> getTeam() {
+			return team;
+		}
+
+		public void setTeam(List<User> team) {
+			this.team = team;
+		}
 }
